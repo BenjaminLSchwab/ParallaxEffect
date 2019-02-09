@@ -1,3 +1,15 @@
 body{
-    background-color: aqua;
+    background-color: darkgrey;
+    
+    font-size: 2em;
+    text-align: center;
+}
+
+html{
+    text-align: center;
+}
+
+p{
+    max-width: 400px;
+    margin: auto;
 }
