@@ -1,7 +1,7 @@
 body{
    
     
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
 }
 
@@ -14,55 +14,34 @@ p{
     margin: auto;
 }
 
+/*Setting initial positions apart*/
 #BigYellowCircle{
     background-image: url(https://www.kirupa.com/images/yellow_circle.svg);
     background-size: 45%;
     background-position: 80% 15%;
-
-    width: 120%;
-    height: 300%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: .4;
-    margin: auto;
-    z-index: -10;
-    
 }
 
 #GreenPentagon{
     background-image: url(https://www.kirupa.com/images/green_pentagon.svg);
     background-size: 30%;
-    background-position: 20% 5%;
+    background-position: 20% 10%;
 
-    width: 120%;
-    height: 300%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: .4;
-    margin: auto;
-    z-index: -20;
-    
 }
 
 #BlueSquare{
     background-image: url(https://www.kirupa.com/images/blue_square.svg);
     background-size: 15%;
-    background-position: center 10%;
-
-    width: 120%;
-    height: 300%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: .4;
-    margin: auto;
-    z-index: -30;
-    
+    background-position: center 19%;
 }
 
 div{
-    overflow: hidden;
+    margin: auto;
     background-repeat: no-repeat;
+    position: fixed; /*This keeps the elemets in a set position compared to scroll, without reference to page content*/
+    width: 100%;
+    height: 300%;
+    top: 0;
+    left: 0;
+    opacity: .4;
+    z-index: -10;
 }

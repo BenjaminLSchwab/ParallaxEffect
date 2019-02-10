@@ -1,28 +1,25 @@
 
-window.addEventListener("DOMContentLoaded", scrollLoop, false);
+ window.addEventListener("DOMContentLoaded", scrollLoop, false); //causes scrollLoop function to be called once at start
 
 var BigYellowCircle = document.getElementById("BigYellowCircle");
 var GreenPentagon = document.getElementById("GreenPentagon");
 var BlueSquare = document.getElementById("BlueSquare");
 
-
-
-var xScrollPos;
 var yScrollPos;
 
 function scrollLoop(e){
-    
-xScrollPos = window.scrollX;
-yScrollPos = window.scrollY;
+    yScrollPos = window.scrollY; //get scrollbar position
 
-setTranslate(xScrollPos * -0.5, yScrollPos * -0.2, BigYellowCircle);
-setTranslate(xScrollPos * -0.4, yScrollPos * -0.4, GreenPentagon);
-setTranslate(xScrollPos * -0.3, yScrollPos * -0.6, BlueSquare);
+    parallaxTranslate(-0.2, BigYellowCircle); //negative because scrollbar moves down and I want the element to move up
+    parallaxTranslate(-0.4, GreenPentagon);
+    parallaxTranslate(-0.6, BlueSquare);
 
-requestAnimationFrame(scrollLoop);
+    requestAnimationFrame(scrollLoop); //This is what makes the function loop
 }
 
-function setTranslate(xPosition, yPosition, el){
-    el.style.transform = "translate3d(" + xPosition + ", " + yPosition + "px, 0)" ;
-    
+//Translates an object using element style
+function parallaxTranslate(parallaxValue, el){
+    el.style.transform = "translate3d(0, " + yScrollPos * parallaxValue + "px, 0)" ; 
 }
+
+
